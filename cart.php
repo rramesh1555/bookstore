@@ -28,8 +28,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         }
         // echo "".$bookID.", ".$quantity.", ".$price;
         $sql = "INSERT INTO cart(`book_id`, `user_id`, `quantity`, `price`, `total_price`) VALUES('".$bookID."', ".$userId.", ".$quantity.", ".$price.", $price * $quantity)";
-        $conn->query($sql) or die($conn->error);;
-        echo "completed";
+        $conn->query($sql) or die($conn->error);
     }
 
     if(isset($_POST['dc'])) {
