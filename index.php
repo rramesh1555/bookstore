@@ -18,7 +18,13 @@ session_start();
 	$sql = "USE bookstore";
 	$conn->query($sql);	
 
-	$sql = "SELECT * FROM books";
+	if(isset($_POST['payment'])) {
+        $_SESSION['bookId']=$_POST['payment'];
+		header("Location:checkout.php");
+
+    }
+
+	$sql = "SELECT * FROM books WHERE quantity > 0";
 	$result = $conn->query($sql);
 ?>	
 
@@ -45,9 +51,8 @@ echo '<blockquote>';
 	    echo "<td>";
 	    echo "<table>";
 	   	echo '<tr><td>'.'<img src="'.$row["image"].'"width="80%">'.'</td></tr><tr><td style="padding: 5px;">Title: '.$row["title"].'</td></tr><tr><td style="padding: 5px;">ISBN: '.$row["isbn"].'</td></tr><tr><td style="padding: 5px;">Author: '.$row["author"].'</td></tr><tr><td style="padding: 5px;">Type: '.$row["type"].'</td></tr><tr><td style="padding: 5px;">RM'.$row["price"].'</td></tr><tr><td style="padding: 5px;">
-	   	<form action="cart.php" method="post">
-	   	Quantity: <input type="number" value="1" name="quantity" style="width: 20%"/><br>
-	   	<input type="hidden" value="'.$row['book_id'].'" name="ac"/>
+	   	<form action="index.php" method="post">
+	   	<input type="hidden" value="'.$row['book_id'].'" name="payment"/>
 	   	<input class="button" type="submit" value="Add to Cart"/>
 	   	</form></td></tr>';
 	   	echo "</table>";

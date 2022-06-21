@@ -16,7 +16,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $hasErr = true;
     } else {
         $uname = strip_tags($_POST['uname']);
-        $mysqli->query($sql);	
+        // $mysqli->query($sql);	
         $sql = "SELECT * FROM users WHERE username = '".$uname."'";
         $r = $mysqli->query($sql);
         if($r){
