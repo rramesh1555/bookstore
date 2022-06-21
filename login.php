@@ -4,6 +4,7 @@
 <header>
 <blockquote>
     <a href="index.php"><img src="image/logo.png"></a>
+    <form class="hf" action="register.php"><input class="hi" type="submit" value="Register"></form>
 </blockquote>
 </header>
 <blockquote>
