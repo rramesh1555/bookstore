@@ -97,46 +97,23 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         padding: 0%!important;
     }
 </style>
-<style> 
-    /* body{background: #f5f5f5}.rounded{border-radius: 1rem}.nav-pills .nav-link{color: #555}.nav-pills .nav-link.active{color: white}input[type="radio"]{margin-right: 5px}.bold{font-weight:bold} */
-</style>
 <body>
 <nav class="navbar navbar-expand-lg navbar-light bg-light py-9 col-md-12">
-  <div class="container col-md-12"><a href="#" class="navbar-brand d-flex align-items-center"> <i class="fa fa-book fa-lg text-primary mr-2"></i><strong>Book Store</strong></a>
+  <div class="container col-md-12"><a href="index.php" class="navbar-brand d-flex align-items-center"> <i class="fa fa-book fa-lg text-primary mr-2"></i><strong>Book Store</strong></a>
     <button type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler"><span class="navbar-toggler-icon"></span></button>
     <div id="navbarSupportedContent" class="collapse navbar-collapse">
       <ul class="navbar-nav ml-auto">
-        <!-- <li class="nav-item active"><a href="#" class="nav-link font-italic"> Home </a></li> -->
         <li class="nav-item active"><a href="logout.php" class="nav-link font-italic"> Logout</a></li>
-        <!-- <li class="nav-item active"><form class="hf" action="register.php"><input class="hi" type="submit" value="Register"></form></li> -->
-
       </ul>
     </div>
   </div>
 </nav>	
-<?php
-// if(isset($_SESSION['id'])){
-// 	echo '<header>';
-// 	echo '<blockquote>';
-// 	echo '<a href="index.php"><img src="image/logo.png"></a>';
-// 	echo '<form class="hf" action="logout.php"><input class="hi" type="submit" name="submitButton" value="Logout"></form>';
-// 	echo '</blockquote>';
-// 	echo '</header>';
-// }
-
-// if(!isset($_SESSION['id'])){
-//     header("Location:login.php");
-// }
-?>
-
 <div class="container py-5" style="width: 35%; margin-top:3%;">
-    <!-- For demo purpose -->
     <div class="row mb-4">
         <div class="col-lg-8 mx-auto text-center">
             <h1 class="display-6">Payment:</h1>
         </div>
-    </div> <!-- End -->
-    <!-- <div class="row"> -->
+    </div>
         <div class="col-lg-12 mx-auto">
             <div class="card ">
                 <div class="card-header">

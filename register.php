@@ -16,7 +16,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $hasErr = true;
     } else {
         $uname = strip_tags($_POST['uname']);
-        // $mysqli->query($sql);	
         $sql = "SELECT * FROM users WHERE username = '".$uname."'";
         $r = $mysqli->query($sql);
         if($r){
@@ -83,24 +82,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $password = strip_tags($_POST['password']);
         $email = strip_tags($_POST['email']);
         $contact = strip_tags($_POST['contact']);
-
-        $servername = "localhost:3307";
-        $dbusername = "root";
-        $dbpassword = "root";
-        $conn = new mysqli($servername, $dbusername, $dbpassword);
-        $sql = "USE bookstore";
-        $conn->query($sql);
-
         $q = "INSERT INTO `users`(`first_name`, `last_name`, `username`, `password`, `email`, `mobile_no`) VALUES (?, ?, ?, ?, ?, ?)";
-        // echo $sql;
-        $stmt = $conn->prepare($q);
+        $stmt = $mysqli->prepare($q);
         $stmt->bind_param("sssssi", $fname, $lname, $username, $password, $email, $contact);
         echo "Form Successfully submited";
-        // echo $stmt;
         $stmt->execute();
         $stmt->close();
         header("Location:login.php");
-        // $conn->query($sql) or die($conn->error);
     }
 }
 
@@ -135,24 +123,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-light bg-light py-9 col-md-12">
-  <div class="container col-md-12"><a href="#" class="navbar-brand d-flex align-items-center"> <i class="fa fa-book fa-lg text-primary mr-2"></i><strong>Book Store</strong></a>
+  <div class="container col-md-12"><a href="login.php" class="navbar-brand d-flex align-items-center"> <i class="fa fa-book fa-lg text-primary mr-2"></i><strong>Book Store</strong></a>
     <button type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler"><span class="navbar-toggler-icon"></span></button>
     <div id="navbarSupportedContent" class="collapse navbar-collapse">
       <ul class="navbar-nav ml-auto">
-        <!-- <li class="nav-item active"><a href="#" class="nav-link font-italic"> Home </a></li> -->
-        <!-- <li class="nav-item active"><a href="register.php" class="nav-link font-italic"> Register</a></li> -->
-        <!-- <li class="nav-item active"><form class="hf" action="register.php"><input class="hi" type="submit" value="Register"></form></li> -->
-
       </ul>
     </div>
   </div>
 </nav>
-<!-- <header>
-<blockquote>
-	<a href="index.php"><img src="image/logo.png"></a>
-</blockquote>
-</header>
-<blockquote> -->
 <div class="container registerp" style="width: 30%;">
 <form method="post"  action="register.php">
 	<h1>Register new user:</h1>
@@ -178,7 +156,5 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 	<input class="button" type="button" name="cancel" value="Cancel" onClick="window.location='login.php';" />
 </form>
 </div>
-</blockquote>
-</center>
 </body>
 </html>

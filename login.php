@@ -28,22 +28,11 @@
     <button type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler"><span class="navbar-toggler-icon"></span></button>
     <div id="navbarSupportedContent" class="collapse navbar-collapse">
       <ul class="navbar-nav ml-auto">
-        <!-- <li class="nav-item active"><a href="#" class="nav-link font-italic"> Home </a></li> -->
         <li class="nav-item active"><a href="register.php" class="nav-link font-italic"> Register</a></li>
-        <!-- <li class="nav-item active"><form class="hf" action="register.php"><input class="hi" type="submit" value="Register"></form></li> -->
-
       </ul>
     </div>
   </div>
 </nav>
-<!-- <object type="text/html" data="header.html" height = 8% width=100%></object> -->
-<!-- <header>
-<blockquote>
-    <a href="index.php"><img src="image/logo.png"></a>
-    <form class="hf" action="register.php"><input class="hi" type="submit" value="Register"></form>
-</blockquote>
-</header>
-<blockquote> -->
 <div class="container loginc" style="width: 30%;">
 <center><h1>Login</h1></center>
 <form action="logincheck.php" method="post">
