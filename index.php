@@ -57,31 +57,19 @@ session_start();
 
     }
 
-	$sql = "SELECT * FROM books WHERE quantity > 0";
+	$sql = "SELECT * FROM bookinventory WHERE quantity > 0";
 	$result = $conn->query($sql);
 ?>	
 
 <?php
-if(isset($_SESSION['id'])){
-	// echo '<header>';
-	// echo '<blockquote>';
-	// echo '<a href="index.php"><img src="image/logo.png"></a>';
-	// echo '<form class="hf" action="logout.php"><input class="hi" type="submit" name="submitButton" value="Logout"></form>';
-	// echo '</blockquote>';
-	// echo '</header>';
-
-
+if(isset($_SESSION['id'])) {
 ?>
-<nav class="navbar navbar-expand-lg navbar-light bg-light py-3">
+<nav class="navbar navbar-expand-lg navbar-light bg-light py-9">
   <div class="container"><a href="#" class="navbar-brand d-flex align-items-center"> <i class="fa fa-book fa-lg text-primary mr-2"></i><strong>Book Store</strong></a>
     <button type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler"><span class="navbar-toggler-icon"></span></button>
     <div id="navbarSupportedContent" class="collapse navbar-collapse">
       <ul class="navbar-nav ml-auto">
       <li class="nav-item active"><a href="logout.php" class="nav-link font-italic"> Logout</a></li>
-        <!-- <li class="nav-item active"><a href="#" class="nav-link font-italic"> Home </a></li> -->
-        <!-- <li class="nav-item active"><a href="register.php" class="nav-link font-italic"> Register</a></li> -->
-        <!-- <li class="nav-item active"><form class="hf" action="register.php"><input class="hi" type="submit" value="Register"></form></li> -->
-
       </ul>
     </div>
   </div>
@@ -101,7 +89,7 @@ echo '<blockquote>';
     while($row = $result->fetch_assoc()) {
 	    echo "<td>";
 	    echo "<table>";
-	   	echo '<tr><td>'.'<img src="'.$row["image"].'"width="80%">'.'</td></tr><tr><td style="padding: 5px;">Title: '.$row["title"].'</td></tr><tr><td style="padding: 5px;">ISBN: '.$row["isbn"].'</td></tr><tr><td style="padding: 5px;">Author: '.$row["author"].'</td></tr><tr><td style="padding: 5px;">Type: '.$row["type"].'</td></tr><tr><td style="padding: 5px;">RM'.$row["price"].'</td></tr><tr><td style="padding: 5px;">
+	   	echo '<tr><td>'.'<img src="'.$row["image"].'"width="80%">'.'</td></tr><tr><td style="padding: 5px;">Title: '.$row["title"].'</td></tr><tr><td style="padding: 5px;">Author: '.$row["author"].'</td></tr><tr><td style="padding: 5px;">Type: '.$row["type"].'</td></tr><tr><td style="padding: 5px;">RM'.$row["price"].'</td></tr><tr><td style="padding: 5px;">
 	   	<form action="index.php" method="post">
 	   	<input type="hidden" value="'.$row['book_id'].'" name="payment"/>
 	   	<input class="button" type="submit" value="Add to Cart"/>

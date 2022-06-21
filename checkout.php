@@ -42,7 +42,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
     
     if (empty($_POST['cvv'])) {
-        $cvvErr = "Please enter card owner name !";
+        $cvvErr = "Please enter a cvv number !";
         $hasErr = true;
     } else {
         $regExp = '/^[0-9]{3}$/';
@@ -59,13 +59,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $bookId = $_SESSION['bookId'];
         $quantity = 1;
 
-
         $q = "INSERT INTO `bookinventoryorder`(`book_id`, `user_id`, `customer_name`, `quantity`) VALUES (?, ?, ?, ?)";
-        // echo $sql;
         $stmt = $mysqli->prepare($q);
         $stmt->bind_param("iisi", $bookId, $userId, $username, $quantity);
         $stmt->execute();
-        $q2 = "UPDATE `books` SET quantity = (quantity - ".$quantity.") WHERE book_id = ".$bookId."";
+        $q2 = "UPDATE `bookinventory` SET quantity = (quantity - ".$quantity.") WHERE book_id = ".$bookId."";
         $stmt = $mysqli->prepare($q2);
         if($stmt->execute()) {
             header("Location:index.php");
@@ -103,7 +101,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     /* body{background: #f5f5f5}.rounded{border-radius: 1rem}.nav-pills .nav-link{color: #555}.nav-pills .nav-link.active{color: white}input[type="radio"]{margin-right: 5px}.bold{font-weight:bold} */
 </style>
 <body>
-<nav class="navbar navbar-expand-lg navbar-light bg-light py-3">
+<nav class="navbar navbar-expand-lg navbar-light bg-light py-9">
   <div class="container"><a href="#" class="navbar-brand d-flex align-items-center"> <i class="fa fa-book fa-lg text-primary mr-2"></i><strong>Book Store</strong></a>
     <button type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler"><span class="navbar-toggler-icon"></span></button>
     <div id="navbarSupportedContent" class="collapse navbar-collapse">

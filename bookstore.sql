@@ -12,7 +12,7 @@ CREATE TABLE users(
     PRIMARY KEY (user_id)
 );
 
-CREATE TABLE books(
+CREATE TABLE bookinventory(
     book_id int not null AUTO_INCREMENT,
 	title varchar(200),
     quantity int,
@@ -33,6 +33,16 @@ CREATE TABLE bookinventoryorder (
     PRIMARY KEY (order_id)
 )
 
+
+INSERT INTO users(`first_name`, `last_name`, `username`, `password`, `email`, `mobile_no`) VALUES('test', 'test', 'admin', '123', '123@abc.com', '1234567890');
+
+INSERT INTO `bookinventory`(`title`, `quantity`, `price`, `author`, `type`, `image`) VALUES ('Lonely Planet Australia (Travel Guide)',10,136,'Lonely Planet','Travel','image/travel.jpg');
+INSERT INTO `bookinventory`(`title`, `quantity`, `price`, `author`, `type`, `image`) VALUES ('Crew Resource Management, Second Edition',10,599,'Barbara Kanki','Technical','image/technical.jpg');
+INSERT INTO `bookinventory`(`title`, `quantity`, `price`, `author`, `type`, `image`) VALUES ('CCNA Routing and Switching 200-125 Official Cert Guide Library',10,329,'Cisco Press ','Technology','image/technology.jpg');
+INSERT INTO `bookinventory`(`title`, `quantity`, `price`, `author`, `type`, `image`) VALUES ('Easy Vegetarian Slow Cooker Cookbook',10,75.9,'Rockridge Press','Food','image/food.jpg');
+
+
+
 -- CREATE TABLE cart(
 -- 	cart_id int not null AUTO_INCREMENT,
 --     user_id int,
@@ -44,13 +54,3 @@ CREATE TABLE bookinventoryorder (
 --     CONSTRAINT FOREIGN KEY (book_id) REFERENCES books(book_id) ON DELETE SET NULL ON UPDATE CASCADE,
 --     CONSTRAINT FOREIGN KEY (user_id) REFERENCES users(user_id) ON DELETE SET NULL ON UPDATE CASCADE
 -- );
-
-INSERT INTO users(`first_name`, `last_name`, `username`, `password`, `email`, `mobile_no`) VALUES('test', 'test', 'admin', '123', '123@abc.com', '1234567890');
-
-INSERT INTO `books`(`title`, `quantity`, `price`, `author`, `type`, `image`) VALUES ('Lonely Planet Australia (Travel Guide)',10,136,'Lonely Planet','Travel','image/travel.jpg');
-INSERT INTO `books`(`title`, `quantity`, `price`, `author`, `type`, `image`) VALUES ('Crew Resource Management, Second Edition',10,599,'Barbara Kanki','Technical','image/technical.jpg');
-INSERT INTO `books`(`title`, `quantity`, `price`, `author`, `type`, `image`) VALUES ('CCNA Routing and Switching 200-125 Official Cert Guide Library',10,329,'Cisco Press ','Technology','image/technology.jpg');
-INSERT INTO `books`(`title`, `quantity`, `price`, `author`, `type`, `image`) VALUES ('Easy Vegetarian Slow Cooker Cookbook',10,75.9,'Rockridge Press','Food','image/food.jpg');
-
-
-
