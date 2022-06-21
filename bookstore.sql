@@ -3,8 +3,12 @@ USE bookstore;
 
 CREATE TABLE users(
     user_id int not null AUTO_INCREMENT,
-    username varchar(128),
-    password varchar(50),
+    first_name varchar(50) not null,
+    last_name varchar(50) not null,
+    username varchar(50) not null,
+    password varchar(50) not null,
+    email varchar(128) not null,
+    mobile_no bigint not null,
     PRIMARY KEY (user_id)
 );
 
@@ -31,7 +35,7 @@ CREATE TABLE cart(
     CONSTRAINT FOREIGN KEY (user_id) REFERENCES users(user_id) ON DELETE SET NULL ON UPDATE CASCADE
 );
 
-INSERT INTO `users`(`username`, `password`) VALUES('admin','123');
+INSERT INTO users(`first_name`, `last_name`, `username`, `password`, `email`, `mobile_no`) VALUES('test', 'test', 'admin', '123', '123@abc.com', '1234567890');
 
 INSERT INTO `books`(`title`, `isbn`, `price`, `author`, `type`, `image`) VALUES ('Lonely Planet Australia (Travel Guide)','123-456-789-1',136,'Lonely Planet','Travel','image/travel.jpg');
 INSERT INTO `books`(`title`, `isbn`, `price`, `author`, `type`, `image`) VALUES ('Crew Resource Management, Second Edition','123-456-789-2',599,'Barbara Kanki','Technical','image/technical.jpg');

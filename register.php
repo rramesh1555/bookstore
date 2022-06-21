@@ -1,5 +1,6 @@
 <?php
 $fnameErr = $lnameErr = $emailErr = $genderErr = $icErr = $contactErr = $unameErr = $passwordErr = "";
+$hasErr = false;
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if (empty($_POST['fname'])) {
         $fnameErr = "Please enter first name !";
@@ -43,6 +44,33 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $contactErr = "Please enter a valid mobile number ! (example: 2123458983)";
             $hasErr = true;
         }
+    }
+
+    if(!$hasErr) {
+        $fname = strip_tags($_POST['fname']);
+        $lname = strip_tags($_POST['lname']);
+        $username = strip_tags($_POST['uname']);
+        $password = strip_tags($_POST['password']);
+        $email = strip_tags($_POST['email']);
+        $contact = strip_tags($_POST['contact']);
+
+        $servername = "localhost:3307";
+        $dbusername = "root";
+        $dbpassword = "root";
+        $conn = new mysqli($servername, $dbusername, $dbpassword);
+        $sql = "USE bookstore";
+        $conn->query($sql);
+
+        $q = "INSERT INTO `users`(`first_name`, `last_name`, `username`, `password`, `email`, `mobile_no`) VALUES (?, ?, ?, ?, ?, ?)";
+        // echo $sql;
+        $stmt = $conn->prepare($q);
+        $stmt->bind_param("sssssi", $fname, $lname, $username, $password, $email, $contact);
+        echo "Form Successfully submited";
+        // echo $stmt;
+        $stmt->execute();
+        $stmt->close();
+        header("Location:login.php");
+        // $conn->query($sql) or die($conn->error);
     }
 }
 
