@@ -38,7 +38,7 @@ INSERT INTO users(`first_name`, `last_name`, `username`, `password`, `email`, `m
 
 INSERT INTO `bookinventory`(`title`, `quantity`, `price`, `author`, `type`, `image`) VALUES ('Lonely Planet Australia (Travel Guide)',10,136,'Lonely Planet','Travel','image/travel.jpg');
 INSERT INTO `bookinventory`(`title`, `quantity`, `price`, `author`, `type`, `image`) VALUES ('Crew Resource Management, Second Edition',10,599,'Barbara Kanki','Technical','image/technical.jpg');
-INSERT INTO `bookinventory`(`title`, `quantity`, `price`, `author`, `type`, `image`) VALUES ('CCNA Routing and Switching 200-125 Official Cert Guide Library',10,329,'Cisco Press ','Technology','image/technology.jpg');
+-- INSERT INTO `bookinventory`(`title`, `quantity`, `price`, `author`, `type`, `image`) VALUES ('CCNA Routing and Switching 200-125 Official Cert Guide Library',10,329,'Cisco Press ','Technology','image/technology.jpg');
 INSERT INTO `bookinventory`(`title`, `quantity`, `price`, `author`, `type`, `image`) VALUES ('Easy Vegetarian Slow Cooker Cookbook',10,75.9,'Rockridge Press','Food','image/food.jpg');
 
 

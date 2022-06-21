@@ -21,6 +21,11 @@
 	color: white;
 	font-weight: bold;
 	}
+
+    img {
+        height: 400px!important;
+        width: 100px;
+    }
 }
 </style>
 <head>
@@ -82,27 +87,59 @@ if(isset($_SESSION['id'])) {
 if(!isset($_SESSION['id'])){
     header("Location:login.php");
 }
-echo '<blockquote>';
-	echo "<table id='myTable' style='width:100%; float:left'>";
-	echo "<tr>";
-    $idx = 0;
-    while($row = $result->fetch_assoc()) {
-	    echo "<td>";
-	    echo "<table>";
-	   	echo '<tr><td>'.'<img src="'.$row["image"].'"width="80%">'.'</td></tr><tr><td style="padding: 5px;">Title: '.$row["title"].'</td></tr><tr><td style="padding: 5px;">Author: '.$row["author"].'</td></tr><tr><td style="padding: 5px;">Type: '.$row["type"].'</td></tr><tr><td style="padding: 5px;">RM'.$row["price"].'</td></tr><tr><td style="padding: 5px;">
-	   	<form action="index.php" method="post">
-	   	<input type="hidden" value="'.$row['book_id'].'" name="payment"/>
-	   	<input class="button" type="submit" value="Add to Cart"/>
-	   	</form></td></tr>';
-	   	echo "</table>";
-	   	echo "</td>";
-        $idx = $idx + 1;
-        if($idx%4 == 0) {
-            echo "</tr>";
-        }
-    }
-    echo "</tr>";
-    echo "</table>";
+// echo '<blockquote>';
+// 	echo "<table id='myTable' style='width:100%; float:left'>";
+// 	echo "<tr>";
+//     $idx = 0;
+//     while($row = $result->fetch_assoc()) {
+// 	    echo "<td>";
+// 	    echo "<table>";
+// 	   	echo '<tr><td>'.'<img src="'.$row["image"].'"width="80%">'.'</td></tr><tr><td style="padding: 5px;">Title: '.$row["title"].'</td></tr><tr><td style="padding: 5px;">Author: '.$row["author"].'</td></tr><tr><td style="padding: 5px;">Type: '.$row["type"].'</td></tr><tr><td style="padding: 5px;">RM'.$row["price"].'</td></tr><tr><td style="padding: 5px;">
+// 	   	<form action="index.php" method="post">
+// 	   	<input type="hidden" value="'.$row['book_id'].'" name="payment"/>
+// 	   	<input class="button" type="submit" value="Add to Cart"/>
+// 	   	</form></td></tr>';
+// 	   	echo "</table>";
+// 	   	echo "</td>";
+//         $idx = $idx + 1;
+//         if($idx%4 == 0) {
+//             echo "</tr>";
+//         }
+//     }
+//     echo "</tr>";
+//     echo "</table>";
 ?>
+<div class="container-fluid">
+  <div class="px-lg-5">
+  <div class="row">
+<?php
+    while($row = $result->fetch_assoc()) {
+        // echo '<div class="row">';
+        // <!-- Gallery item -->
+        echo '<div class="col-xl-3 col-lg-4 col-md-6 mb-4">';
+        echo '<div class="bg-white rounded shadow-sm"><img src="'.$row["image"].'" alt="" class="img-fluid card-img-top">';
+        echo    '<div class="p-4">';
+        echo'    <h5>'.$row["title"].'</h5>';
+        echo    '<p class="small text-muted mb-0"><strong>Price:</strong>'.$row["price"].'</p>';
+        echo    '<div class="d-flex align-items-center justify-content-between rounded-pill bg-light px-3 py-2 mt-4">';
+        // echo     '<p class="small mb-0"><i class="fa fa-picture-o mr-2"></i><span class="font-weight-bold">JPG</span></p>';
+        echo '<form action="index.php" method="post">';
+        echo    '<input type="hidden" value="'.$row['book_id'].'" name="payment"/>';
+        // echo     '<div class="badge badge-danger px-3 rounded-pill font-weight-normal">Add to card</div>';
+        echo '<input class="button" type="submit" value="Add to Cart"/>';
+        echo    '</div>';
+        echo    '</div>';
+        echo '</div>';
+        echo '</div>';
+    }
+?>
+    
+      <!-- End -->
+
+    </div>
+    <!-- <div class="py-5 text-right"><a href="#" class="btn btn-dark px-5 py-3 text-uppercase">Show me more</a></div> -->
+  </div>
+</div>
+
 </body>
 </html>
