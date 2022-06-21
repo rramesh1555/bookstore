@@ -34,8 +34,6 @@ if(isset($_SESSION['id'])){
 	echo '<blockquote>';
 	echo '<a href="index.php"><img src="image/logo.png"></a>';
 	echo '<form class="hf" action="logout.php"><input class="hi" type="submit" name="submitButton" value="Logout"></form>';
-	// echo '<form class="hf" action="edituser.php"><input class="hi" type="submit" name="submitButton" value="Edit Profile"></form>';
-    echo '<form class="hf" action="cart.php"><input class="hi" type="submit" name="submitButton" value="Cart"></form>';
 	echo '</blockquote>';
 	echo '</header>';
 }
