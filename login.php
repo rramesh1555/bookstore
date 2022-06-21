@@ -3,7 +3,7 @@
 <body>
 <header>
 <blockquote>
-    <a href="index.php"><img src="image/logo.png"></a>
+    <a href="index.php"><img src="image/logo.png" width="500" height="600"></a>
 </blockquote>
 </header>
 <blockquote>
@@ -29,4 +29,5 @@ if(isset($_GET['errcode'])){
 }
 ?>
 </body>
+
 </html>

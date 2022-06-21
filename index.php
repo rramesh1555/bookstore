@@ -1,13 +1,18 @@
 <html>
 <!-- <meta http-equiv="Content-Type"'.' content="text/html; charset=utf8"/> -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
 <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/fontawesome.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 <body>
 <?php
 session_start();
-	$servername = "localhost:3307";
+	$servername = "localhost";
 	$username = "root";
-	$password = "root";
+	$password = "";
 
 	$conn = new mysqli($servername, $username, $password);
 
@@ -61,4 +66,41 @@ echo '<blockquote>';
     echo "</table>";
 ?>
 </body>
+<footer class="text-center text-lg-start bg-light text-muted">
+  <section class="d-flex justify-content-center justify-content-lg-between"></section>
+  <section>
+      <div class="container text-center text-md-start mt-5">
+          <div class="row mt-3">
+              <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+                  <h6 class="text-uppercase fw-bold mb-4">The Book House</h6>
+                  <p style="text-align:left">As readers, we know the joy that reading brings but we also know how
+                      expensive new books can be.
+                      That is why we strive to offer read-iculously low prices on great titles, so that the joy of
+                      reading can be accessible to all.</p>
+              </div>
+              <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+                  <h6 class="text-uppercase fw-bold mb-4">Menu</h6>
+                  <p><a class="text-reset" href="/"> Home</a></p>
+                  <p><a class="text-reset" href="/about">AboutUs</a></p>
+                  <p><a class="text-reset" href="/list">List</a></p>
+              </div>
+              <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+                  <h6 class="text-uppercase fw-bold mb-4">Useful links</h6>
+                  <p><a class="text-reset" href="#!">Pricing</a></p>
+                  <p><a class="text-reset" href="#!">Settings</a></p>
+                  <p><a class="text-reset" href="#!">Orders</a></p>
+                  <p><a class="text-reset" href="#!">Help</a></p>
+              </div>
+              <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+                  <h6 class="text-uppercase fw-bold mb-4">Contact</h6>
+                  <p><i class="fa fa-home me-3"></i> Toronto, Canada</p>
+                  <p><i class="fa fa-envelope me-3"></i>info@bookhouse.com</p>
+                  <p><i class="fa fa-phone me-3"></i> + 1 222 745 8118</p>
+              </div>
+          </div>
+      </div>
+  </section>
+  <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">&copy; 2022 Copyright:<a
+          class="text-reset fw-bold" href="https://mdbootstrap.com/"> BookHouse.com</a></div>
+</footer>
 </html>
