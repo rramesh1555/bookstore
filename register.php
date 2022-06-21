@@ -2,6 +2,7 @@
 $fnameErr = $lnameErr = $emailErr = $genderErr = $icErr = $contactErr = $unameErr = $passwordErr = "";
 $hasErr = false;
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    require('./mysqli_connect.php');
     if (empty($_POST['fname'])) {
         $fnameErr = "Please enter first name !";
         $hasErr = true;
@@ -13,6 +14,20 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if (empty($_POST['uname'])) {
         $unameErr = "Please enter username !";
         $hasErr = true;
+    } else {
+        $uname = strip_tags($_POST['uname']);
+        $mysqli->query($sql);	
+        $sql = "SELECT * FROM users WHERE username = '".$uname."'";
+        $r = $mysqli->query($sql);
+        if($r){
+            $num = $r->num_rows;
+            if ($num > 0) { 
+                $unameErr = "Username already exist !";
+                $hasErr = true;
+                $r->free();
+                unset($r);
+            }
+        }
     }
     if (empty($_POST['password'])) {
         $passwordErr = "Please enter password !";
@@ -33,6 +48,22 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         if(!filter_var($email, FILTER_VALIDATE_EMAIL)) {
             $emailErr = "Please enter a valid email !";
             $hasErr = true;
+       } else {
+            $email = strip_tags($_POST['email']);
+            $mysqli->query($sql);	
+            $sql = "SELECT * FROM users WHERE email = '".$email."'";
+            echo $sql;
+            $r = $mysqli->query($sql);
+            if($r){
+                $num = $r->num_rows;
+                if ($num > 0) { 
+                    $emailErr = "Email already exist !";
+                    $hasErr = true;
+                    $r->free();
+                    unset($r);
+                }
+            }
+
        }
     }
     if (empty($_POST['contact'])) {
@@ -45,7 +76,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $hasErr = true;
         }
     }
-
     if(!$hasErr) {
         $fname = strip_tags($_POST['fname']);
         $lname = strip_tags($_POST['lname']);

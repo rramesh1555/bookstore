@@ -5,9 +5,9 @@ CREATE TABLE users(
     user_id int not null AUTO_INCREMENT,
     first_name varchar(50) not null,
     last_name varchar(50) not null,
-    username varchar(50) not null,
+    username varchar(50) not null unique,
     password varchar(50) not null,
-    email varchar(128) not null,
+    email varchar(128) not null unique,
     mobile_no bigint not null,
     PRIMARY KEY (user_id)
 );
