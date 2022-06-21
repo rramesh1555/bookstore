@@ -33,6 +33,10 @@ if(isset($_SESSION['id'])){
 	echo '</blockquote>';
 	echo '</header>';
 }
+
+if(!isset($_SESSION['id'])){
+    header("Location:login.php");
+}
 echo '<blockquote>';
 	echo "<table id='myTable' style='width:100%; float:left'>";
 	echo "<tr>";
