@@ -77,6 +77,7 @@ if(isset($_SESSION['id'])){
     <button type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler"><span class="navbar-toggler-icon"></span></button>
     <div id="navbarSupportedContent" class="collapse navbar-collapse">
       <ul class="navbar-nav ml-auto">
+      <li class="nav-item active"><a href="logout.php" class="nav-link font-italic"> Logout</a></li>
         <!-- <li class="nav-item active"><a href="#" class="nav-link font-italic"> Home </a></li> -->
         <!-- <li class="nav-item active"><a href="register.php" class="nav-link font-italic"> Register</a></li> -->
         <!-- <li class="nav-item active"><form class="hf" action="register.php"><input class="hi" type="submit" value="Register"></form></li> -->
