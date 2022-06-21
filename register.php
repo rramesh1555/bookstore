@@ -107,14 +107,53 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 ?>
 <html>
 <link rel="stylesheet" href="style.css">
+<style>
+    body {
+        background: url(https://www.nhslibrary.org/wp-content/uploads/bfi_thumb/bgr-banner-nnxtux8zaniv1g8qyrbxsuoi7hftbuzoympklz1hqo.png);
+        background-size: cover;
+    }
+    .registerp {
+        margin-top: 3%;
+    }
+    nav { 
+        width: 100%;
+        margin: 0%;
+        padding: 0%!important;
+    }
+</style>
+<head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+  <link rel="stylesheet" type="text/css" href="CSS/style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/fontawesome.min.css" integrity="sha384-zIaWifL2YFF1qaDiAo0JFgsmasocJ/rqu7LKYH8CoBEXqGbb9eO+Xi3s6fQhgFWM" crossorigin="anonymous">
+  
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+  
+</head>
 <body>
-<header>
+<nav class="navbar navbar-expand-lg navbar-light bg-light py-3">
+  <div class="container"><a href="#" class="navbar-brand d-flex align-items-center"> <i class="fa fa-book fa-lg text-primary mr-2"></i><strong>Book Store</strong></a>
+    <button type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler"><span class="navbar-toggler-icon"></span></button>
+    <div id="navbarSupportedContent" class="collapse navbar-collapse">
+      <ul class="navbar-nav ml-auto">
+        <!-- <li class="nav-item active"><a href="#" class="nav-link font-italic"> Home </a></li> -->
+        <!-- <li class="nav-item active"><a href="register.php" class="nav-link font-italic"> Register</a></li> -->
+        <!-- <li class="nav-item active"><form class="hf" action="register.php"><input class="hi" type="submit" value="Register"></form></li> -->
+
+      </ul>
+    </div>
+  </div>
+</nav>
+<!-- <header>
 <blockquote>
 	<a href="index.php"><img src="image/logo.png"></a>
 </blockquote>
 </header>
-<blockquote>
-<div class="container">
+<blockquote> -->
+<div class="container registerp" style="width: 30%;">
 <form method="post"  action="register.php">
 	<h1>Register new user:</h1>
 	First Name:<br><input type="text" name="fname" value="<?php if (isset($_POST['fname'])) echo $_POST['fname']; ?>">
