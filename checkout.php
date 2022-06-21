@@ -131,15 +131,15 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 // }
 ?>
 
-<div class="container py-5">
+<div class="container py-5" style="width: 35%; margin-top:3%;">
     <!-- For demo purpose -->
     <div class="row mb-4">
         <div class="col-lg-8 mx-auto text-center">
             <h1 class="display-6">Payment:</h1>
         </div>
     </div> <!-- End -->
-    <div class="row">
-        <div class="col-lg-6 mx-auto">
+    <!-- <div class="row"> -->
+        <div class="col-lg-12 mx-auto">
             <div class="card ">
                 <div class="card-header">
                     <div class="bg-white shadow-sm pt-4 pl-2 pr-2 pb-2">
@@ -189,6 +189,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 </div>
             </div>
         </div>
-    </div>
+    <!-- </div> -->
 </body>
 </html>
