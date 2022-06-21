@@ -88,4 +88,11 @@ echo '<blockquote>';
     echo "</tr>";
     echo "</table>";
 ?>
+<hr>
+
+<form action="checkout.php">
+    <!-- <input  class="button chkbtn" type="submit" id="chkbtn" value="Proceed to Checkout" /> -->
+    <input class="button chkbtn" type="submit" id="chkbtn" value="Proceed to Checkout" style="margin-left: 45%;margin-top: 0%">
+</form>
+
 </body>
