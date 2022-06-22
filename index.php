@@ -44,13 +44,13 @@
 <?php
     session_start();
     require('./mysqli_connect.php');
-
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 	if(isset($_POST['payment'])) {
         $_SESSION['bookId']=$_POST['payment'];
 		header("Location:checkout.php");
 
     }
-
+  }
 	$sql = "SELECT * FROM bookinventory WHERE quantity > 0";
 	$result = $mysqli->query($sql);
 ?>	
@@ -93,6 +93,7 @@ if(!isset($_SESSION['id'])){
         echo    '<input type="hidden" value="'.$row['book_id'].'" name="payment"/>';
         // echo     '<div class="badge badge-danger px-3 rounded-pill font-weight-normal">Add to card</div>';
         echo '<input class="button" type="submit" value="Add to Cart"/>';
+        echo '</form>';
         echo    '</div>';
         echo    '</div>';
         echo '</div>';
