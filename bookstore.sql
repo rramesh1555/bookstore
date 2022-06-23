@@ -31,26 +31,17 @@ CREATE TABLE bookinventoryorder (
     quantity int,
     order_date datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
     PRIMARY KEY (order_id)
-)
+);
 
 
 INSERT INTO users(`first_name`, `last_name`, `username`, `password`, `email`, `mobile_no`) VALUES('test', 'test', 'admin', '123', '123@abc.com', '1234567890');
 
 INSERT INTO `bookinventory`(`title`, `quantity`, `price`, `author`, `type`, `image`) VALUES ('Lonely Planet Australia (Travel Guide)',10,136,'Lonely Planet','Travel','image/travel.jpg');
 INSERT INTO `bookinventory`(`title`, `quantity`, `price`, `author`, `type`, `image`) VALUES ('Crew Resource Management, Second Edition',10,599,'Barbara Kanki','Technical','image/technical.jpg');
--- INSERT INTO `bookinventory`(`title`, `quantity`, `price`, `author`, `type`, `image`) VALUES ('CCNA Routing and Switching 200-125 Official Cert Guide Library',10,329,'Cisco Press ','Technology','image/technology.jpg');
 INSERT INTO `bookinventory`(`title`, `quantity`, `price`, `author`, `type`, `image`) VALUES ('Easy Vegetarian Slow Cooker Cookbook',10,75.9,'Rockridge Press','Food','image/food.jpg');
-
-
-
--- CREATE TABLE cart(
--- 	cart_id int not null AUTO_INCREMENT,
---     user_id int,
---     book_id int,
---     price double(12,2),
---     quantity int,
---     total_price double(12,2),
---     PRIMARY KEY (cart_id),
---     CONSTRAINT FOREIGN KEY (book_id) REFERENCES books(book_id) ON DELETE SET NULL ON UPDATE CASCADE,
---     CONSTRAINT FOREIGN KEY (user_id) REFERENCES users(user_id) ON DELETE SET NULL ON UPDATE CASCADE
--- );
+INSERT INTO `bookinventory`(`title`, `quantity`, `price`, `author`, `type`, `image`) VALUES ('The Alchemist',10,150,'Paulo Coelho','Fantasy','image/ALCHEMIST.jpg');
+INSERT INTO `bookinventory`(`title`, `quantity`, `price`, `author`, `type`, `image`) VALUES ('Hamnet, Third Edition',10,399,'Maggie O Farrell','Fiction','image/HAMNET.jpg');
+INSERT INTO `bookinventory`(`title`, `quantity`, `price`, `author`, `type`, `image`) VALUES ('Harry Potter',10,800,'J. K. Rowling','Fantasy','image/HARRYPOTTER.jpg');
+INSERT INTO `bookinventory`(`title`, `quantity`, `price`, `author`, `type`, `image`) VALUES ('Notes on a Silencing: A Memoir',10,440,'Lacy Crawford','Drama','image/NOTES.jpg');
+INSERT INTO `bookinventory`(`title`, `quantity`, `price`, `author`, `type`, `image`) VALUES ('Da Vinci Code',10,200,'Dan Brown','Mystery','image/THEDAVINCICODE.jpg');
+INSERT INTO `bookinventory`(`title`, `quantity`, `price`, `author`, `type`, `image`) VALUES ('Twilight Mind',10,575.99,'Julie-Anne','Thriller','image/THETWILIGHTSAGA.jpg');
