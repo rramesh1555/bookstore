@@ -17,7 +17,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $regExp = '/^[0-9]{16}$/';
         $cno = strip_tags($_POST['cardNumber']);
         if(!preg_match($regExp, $cno)) {
-            $cErr = "Please enter a valid card number !";
+            $cErr = "Please enter a valid 16 digit card number !";
             $hasErr = true;
         }
     }
